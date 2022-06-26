@@ -16,7 +16,12 @@ public class Cml {
     public String getBackground(int code, String str) {
         if(code > 255 || code < 0) throw new IllegalArgumentException("code must be between 0 and 255");
 
-        return String.format(form, "\u001b[48;5;" + code + "m", str, Colour.reset.getBackground());
+        return String.format(form, getDecorator(code), str, Colour.reset.getBackground());
+    }
+
+    public String getDecorator(int code) {
+
+        return "\u001b[48;5;" + code + "m";
     }
 
     public String black(String str){
@@ -104,10 +109,11 @@ public class Cml {
         for(int i = 0; i<16; i++){
             for (int j = 1; j<16; j++){
                 code = i*16 + j;
-                System.out.print("\u001b[48;5;" + code + "m");
+                System.out.print(cml.getDecorator(code));
                 System.out.format("%2s%3d%s", "  ", code, "  ");
                 System.out.print(Colour.reset.getColour());
             }
+            System.out.println();
             }
 
     }
