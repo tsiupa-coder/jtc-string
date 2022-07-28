@@ -8,6 +8,10 @@ public class Cml {
         return String.format(form, colour.getColour(), str, Colour.reset.getColour());
     }
 
+    public String getBold(Colour colour, String str) {
+        return String.format(form, colour.getBold(), str, Colour.reset.getCode());
+    }
+
     public String getBackground(Colour colour, String str) {
         return String.format(form, colour.getBackground(), str, Colour.reset.getBackground());
     }
@@ -86,5 +90,4 @@ public class Cml {
     public String blue_bgr(String str) {
         return getBackground(Colour.blue, str);
     }
-
 }

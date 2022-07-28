@@ -4,8 +4,15 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static java.lang.System.out;
-import static jtc.core.Colour.*;
-
+import static jtc.core.Colour.black;
+import static jtc.core.Colour.blue;
+import static jtc.core.Colour.cyan;
+import static jtc.core.Colour.green;
+import static jtc.core.Colour.magenta;
+import static jtc.core.Colour.red;
+import static jtc.core.Colour.reset;
+import static jtc.core.Colour.white;
+import static jtc.core.Colour.yellow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CmlTest {
@@ -32,6 +39,7 @@ class CmlTest {
 
     @Test
     public void printBackground() {
+        out.println();
         out.println(cml.getBackground(yellow, text));
         out.println(cml.getBackground(black, text));
         out.println(cml.getBackground(green, text));
@@ -43,6 +51,7 @@ class CmlTest {
 
     @Test
     public void printColourText() {
+        out.println();
         out.println(cml.black(text));
         out.println(cml.red(text));
         out.println(cml.green(text));
@@ -55,7 +64,7 @@ class CmlTest {
 
     @Test
     public void printColour() {
-
+        out.println();
         out.println(cml.getColour(black, text));
         out.println(cml.getColour(red, text));
         out.println(cml.getColour(green, text));
@@ -68,8 +77,35 @@ class CmlTest {
     }
 
     @Test
-    public void print() {
+    public void testGetBold() {
+        out.println();
+        //reset.getColour() close black.getBold()
+        out.println(black.getBold() + text + reset.getColour());
+        out.println(red.getBold() + text + reset.getColour());
+        out.println(green.getBold() + text + reset.getColour());
+        out.println(yellow.getBold() + text + reset.getColour());
+        out.println(magenta.getBold() + text + reset.getColour());
+        out.println(cyan.getBold() + text + reset.getColour());
+        out.println(white.getBold() + text + reset.getColour());
+        out.println(blue.getBold() + text + reset.getColour());
+    }
 
+    @Test
+    public void testGetBold2() {
+        out.println();
+        out.println(cml.getBold(black, text));
+        out.println(cml.getBold(red, text));
+        out.println(cml.getBold(green, text));
+        out.println(cml.getBold(yellow, text));
+        out.println(cml.getBold(magenta, text));
+        out.println(cml.getBold(cyan, text));
+        out.println(cml.getBold(white, text));
+        out.println(cml.getBold(blue, text));
+    }
+
+    @Test
+    public void print() {
+        out.println();
         out.println(
                 cml.getColour(
                         Colour.yellow,
@@ -80,12 +116,13 @@ class CmlTest {
 
     @Test
     public void ByCode() {
+        out.println();
         out.println(cml.getBackground(100, text));
     }
 
     @Test
     public void miscellaneous() {
-
+        out.println();
         System.out.println(cml.blue_bgr(cml.black("Advance example ")) + cml.yellow_bgr(cml.black(" too :)")));
         System.out.println();
 
@@ -117,30 +154,30 @@ class CmlTest {
     }
 
     @Test
-    public void testEnumColour(){
+    public void testEnumColour() {
 
-        assertEquals(black.getCode(), 30);
-        assertEquals(black.getBgr_code(), 40);
+        assertEquals(30, black.getCode());
+        assertEquals(40, black.getBgr_code());
 
-        assertEquals(red.getCode(), 31);
-        assertEquals(red.getBgr_code(), 41);
+        assertEquals(31, red.getCode());
+        assertEquals(41, red.getBgr_code());
 
-        assertEquals(green.getCode(), 32);
-        assertEquals(green.getBgr_code(), 42);
+        assertEquals(32, green.getCode());
+        assertEquals(42, green.getBgr_code());
 
-        assertEquals(yellow.getCode(), 33);
-        assertEquals(yellow.getBgr_code(), 43);
+        assertEquals(33, yellow.getCode());
+        assertEquals(43, yellow.getBgr_code());
 
-        assertEquals(blue.getCode(), 34);
-        assertEquals(blue.getBgr_code(), 44);
+        assertEquals(34, blue.getCode());
+        assertEquals(44, blue.getBgr_code());
 
-        assertEquals(magenta.getCode(), 35);
-        assertEquals(magenta.getBgr_code(), 45);
+        assertEquals(35, magenta.getCode());
+        assertEquals(45, magenta.getBgr_code());
 
-        assertEquals(cyan.getCode(), 36);
-        assertEquals(cyan.getBgr_code(), 46);
+        assertEquals(36, cyan.getCode());
+        assertEquals(46, cyan.getBgr_code());
 
-        assertEquals(white.getCode(), 37);
-        assertEquals(white.getBgr_code(), 47);
+        assertEquals(37, white.getCode());
+        assertEquals(47, white.getBgr_code());
     }
 }
