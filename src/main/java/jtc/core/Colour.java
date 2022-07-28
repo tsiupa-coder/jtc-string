@@ -33,4 +33,12 @@ public enum Colour {
     public String getBackground() {
         return String.format(decorate, bgr_code);
     }
+
+    public int getBgr_code() {
+        return bgr_code;
+    }
+
+    public int getCode() {
+        return code;
+    }
 }

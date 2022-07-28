@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import static java.lang.System.out;
 import static jtc.core.Colour.*;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class CmlTest {
 
     private static Cml cml;
@@ -112,5 +114,33 @@ class CmlTest {
             }
             System.out.println();
         }
+    }
+
+    @Test
+    public void testEnumColour(){
+
+        assertEquals(black.getCode(), 30);
+        assertEquals(black.getBgr_code(), 40);
+
+        assertEquals(red.getCode(), 31);
+        assertEquals(red.getBgr_code(), 41);
+
+        assertEquals(green.getCode(), 32);
+        assertEquals(green.getBgr_code(), 42);
+
+        assertEquals(yellow.getCode(), 33);
+        assertEquals(yellow.getBgr_code(), 43);
+
+        assertEquals(blue.getCode(), 34);
+        assertEquals(blue.getBgr_code(), 44);
+
+        assertEquals(magenta.getCode(), 35);
+        assertEquals(magenta.getBgr_code(), 45);
+
+        assertEquals(cyan.getCode(), 36);
+        assertEquals(cyan.getBgr_code(), 46);
+
+        assertEquals(white.getCode(), 37);
+        assertEquals(white.getBgr_code(), 47);
     }
 }
