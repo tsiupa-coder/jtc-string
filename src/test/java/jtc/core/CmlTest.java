@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static java.lang.System.out;
+import static jtc.core.Colour.*;
 
 class CmlTest {
 
@@ -29,13 +30,13 @@ class CmlTest {
 
     @Test
     public void printBackground() {
-        out.println(cml.getBackground(Colour.yellow, text));
-        out.println(cml.getBackground(Colour.black, text));
-        out.println(cml.getBackground(Colour.green, text));
-        out.println(cml.getBackground(Colour.magenta, text));
-        out.println(cml.getBackground(Colour.cyan, text));
-        out.println(cml.getBackground(Colour.white, text));
-        out.println(cml.getBackground(Colour.blue, text));
+        out.println(cml.getBackground(yellow, text));
+        out.println(cml.getBackground(black, text));
+        out.println(cml.getBackground(green, text));
+        out.println(cml.getBackground(magenta, text));
+        out.println(cml.getBackground(cyan, text));
+        out.println(cml.getBackground(white, text));
+        out.println(cml.getBackground(blue, text));
     }
 
     @Test
@@ -53,14 +54,14 @@ class CmlTest {
     @Test
     public void printColour() {
 
-        out.println(cml.getColour(Colour.black, text));
-        out.println(cml.getColour(Colour.red, text));
-        out.println(cml.getColour(Colour.green, text));
-        out.println(cml.getColour(Colour.yellow, text));
-        out.println(cml.getColour(Colour.magenta, text));
-        out.println(cml.getColour(Colour.cyan, text));
-        out.println(cml.getColour(Colour.white, text));
-        out.println(cml.getColour(Colour.blue, text));
+        out.println(cml.getColour(black, text));
+        out.println(cml.getColour(red, text));
+        out.println(cml.getColour(green, text));
+        out.println(cml.getColour(yellow, text));
+        out.println(cml.getColour(magenta, text));
+        out.println(cml.getColour(cyan, text));
+        out.println(cml.getColour(white, text));
+        out.println(cml.getColour(blue, text));
 
     }
 
@@ -70,7 +71,7 @@ class CmlTest {
         out.println(
                 cml.getColour(
                         Colour.yellow,
-                        cml.getBackground(Colour.blue, text))
+                        cml.getBackground(blue, text))
         );
 
     }
