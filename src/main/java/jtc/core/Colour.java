@@ -17,9 +17,8 @@ public enum Colour {
         this.bgr_code = bgr_code;
     }
 
-    private int code;
-    private int bgr_code;
-
+    private final int code;
+    private final int bgr_code;
 
     private static final String decorate = "\u001b[%sm";
 
@@ -27,11 +26,11 @@ public enum Colour {
         return String.format(decorate, code);
     }
 
-    public String getBold(){
+    public String getBold() {
         return String.format(decorate, code + ";1");
     }
 
-    public String getBackground(){
+    public String getBackground() {
         return String.format(decorate, bgr_code);
     }
 }
