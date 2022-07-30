@@ -27,7 +27,7 @@ class CmlTest {
 
     @Test
     public void printColourBackground() {
-
+        out.println();
         out.println(cml.yellow_bgr(text));
         out.println(cml.black_bgr(text));
         out.println(cml.green_bgr(text));
